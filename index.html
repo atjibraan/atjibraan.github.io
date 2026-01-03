@@ -6,9 +6,7 @@
 <title>Jibraan Attar — Portfolio</title>
 
 <style>
-  *{
-    box-sizing:border-box;
-  }
+  *{ box-sizing:border-box; }
 
   body{
     margin:0;
@@ -30,21 +28,34 @@
     padding:60px 20px 40px;
   }
 
+  /* 🔥 Animated gradient ring around photo */
+  .profile-wrap{
+    width:165px;
+    height:165px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    padding:4px;
+    background:conic-gradient(#38bdf8, #4f46e5, #22c55e, #38bdf8);
+    animation: spin 5s linear infinite;
+  }
+
+  @keyframes spin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+  }
+
   .profile{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid rgba(255,255,255,.5);
-    box-shadow: 0 20px 45px rgba(0,0,0,.55);
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
     display:block;
-    margin: 0 auto 14px auto;
+    border:3px solid #0b1220;
   }
 
   header h1{
     margin:10px 0 0;
     font-size:3rem;
-    letter-spacing:1px;
   }
 
   header p{
@@ -74,16 +85,9 @@
     box-shadow: 0 25px 55px rgba(0,0,0,.45);
   }
 
-  h2{
-    margin-top:0;
-    font-weight:600;
-    font-size:1.4rem;
-  }
+  h2{ margin-top:0; }
 
-  a{
-    color:#a5f3fc;
-    text-decoration:none;
-  }
+  a{ color:#a5f3fc; text-decoration:none; }
 
   .resume-grid{
     display:grid;
@@ -106,10 +110,29 @@
     background: rgba(255,255,255,.16);
   }
 
-  ul{
-    margin:10px 0 0;
-    padding-left:18px;
-    line-height:1.6;
+  /* 🔗 clickable project cards */
+  .projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+
+  .project-card{
+    padding:18px;
+    border-radius:14px;
+    background: rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    transition:.25s;
+    cursor:pointer;
+  }
+
+  .project-card:hover{
+    transform: translateY(-6px);
+    background: rgba(255,255,255,.15);
+  }
+
+  .project-card h3{
+    margin-top:0;
   }
 
   footer{
@@ -118,6 +141,12 @@
     opacity:.7;
     font-size:.9rem;
   }
+
+  /* 📱 Better mobile layout */
+  @media (max-width:600px){
+    header h1{ font-size:2.2rem; }
+    header p{ font-size:1rem; }
+  }
 </style>
 </head>
 
@@ -125,10 +154,14 @@
 
 <header>
 
-  <img src="profile.png" alt="Jibraan Attar" class="profile">
+  <!-- animated gradient photo frame -->
+  <div class="profile-wrap">
+    <img src="profile.png" alt="Jibraan Attar" class="profile">
+  </div>
 
   <h1>Jibraan Attar</h1>
   <p>M.Sc Data Science — AI/ML • Data Analytics • Python Development</p>
+
 </header>
 
 <div class="container">
@@ -137,8 +170,8 @@
     <h2>📬 Contact</h2>
     <p><strong>Email:</strong> jibraanattar55@gmail.com</p>
     <p><strong>Phone:</strong> +91 8262015335</p>
-    <p><strong>LinkedIn:</strong> <a target="_blank" href="https://linkedin.com/in/jibraan-attara372">linkedin.com/in/jibraan-attara372</a></p>
-    <p><strong>GitHub:</strong> <a target="_blank" href="https://github.com/atjibraan">github.com/atjibraan</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jibraan-attara372" target="_blank">linkedin.com/in/jibraan-attara372</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/atjibraan" target="_blank">github.com/atjibraan</a></p>
   </div>
 
   <div class="card">
@@ -146,9 +179,7 @@
 
     <div class="resume-grid">
       <a class="resume-btn" href="Jibraan_Attar_Fresher_ml_engineer.pdf" target="_blank">🚀 AI / ML Engineer</a>
-
       <a class="resume-btn" href="Jibraan_Attar_Fresher_Data_Analyst_Data_Scientist.pdf" target="_blank">📊 Data Analyst / Scientist</a>
-
       <a class="resume-btn" href="Jibraan_Attar_Fresher_Python_Developer.pdf" target="_blank">🐍 Python Developer</a>
     </div>
   </div>
@@ -156,22 +187,36 @@
   <div class="card">
     <h2>💡 About Me</h2>
     <p>
-      Passionate Data Science postgraduate with expertise in Machine Learning, Deep Learning,
-      Computer Vision, Generative AI and analytics. I love building real-world,
-      deployable AI applications and solving meaningful problems.
+      Passionate Data Science postgraduate with expertise in Machine Learning,
+      Deep Learning, Computer Vision, Generative AI and analytics. Focused on
+      building real-world, deployable AI solutions that create impact.
     </p>
   </div>
 
   <div class="card">
     <h2>🧩 Featured Projects</h2>
 
-    <ul>
-      <li><strong>Crack Detection — YOLOv5 + ResNet18</strong> (real-time classification & deployment)</li>
-      <li><strong>Stable Diffusion Prompt App</strong> — text-to-image generation</li>
-      <li><strong>Brain Tumor Classifier (CNN)</strong> — interactive medical AI app</li>
-      <li><strong>HR Analytics Dashboard</strong> — Power BI & insights</li>
-      <li><strong>Sales Analytics (Excel)</strong> — KPIs, segmentation & trends</li>
-    </ul>
+    <div class="projects">
+      <a class="project-card" href="#" target="_blank">
+        <h3>Crack Detection — YOLOv5 + ResNet18</h3>
+        <p>Real-time defect detection with automated severity classification.</p>
+      </a>
+
+      <a class="project-card" href="#" target="_blank">
+        <h3>Stable Diffusion Generator</h3>
+        <p>Text-to-image AI app with customizable prompts and parameters.</p>
+      </a>
+
+      <a class="project-card" href="#" target="_blank">
+        <h3>Brain Tumor Classifier (CNN)</h3>
+        <p>Medical image classification deployed as an interactive web app.</p>
+      </a>
+
+      <a class="project-card" href="#" target="_blank">
+        <h3>HR & Sales Analytics Dashboards</h3>
+        <p>Insights, KPIs and trends using Power BI and Excel.</p>
+      </a>
+    </div>
   </div>
 
 </div>
