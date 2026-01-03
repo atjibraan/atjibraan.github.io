@@ -28,34 +28,21 @@
     padding:60px 20px 40px;
   }
 
-  /* 🔥 Animated gradient ring around photo */
-  .profile-wrap{
-    width:165px;
-    height:165px;
-    margin:0 auto 14px;
-    border-radius:50%;
-    padding:4px;
-    background:conic-gradient(#38bdf8, #4f46e5, #22c55e, #38bdf8);
-    animation: spin 5s linear infinite;
-  }
-
-  @keyframes spin {
-    0%{transform:rotate(0deg);}
-    100%{transform:rotate(360deg);}
-  }
-
   .profile{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,.5);
+    box-shadow: 0 20px 45px rgba(0,0,0,.55);
     display:block;
-    border:3px solid #0b1220;
+    margin: 0 auto 14px auto;
   }
 
   header h1{
     margin:10px 0 0;
     font-size:3rem;
+    letter-spacing:1px;
   }
 
   header p{
@@ -71,7 +58,7 @@
 
   .card{
     background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1x solid rgba(255,255,255,0.12);
     border-radius: 18px;
     padding:24px;
     margin:18px 0;
@@ -85,9 +72,16 @@
     box-shadow: 0 25px 55px rgba(0,0,0,.45);
   }
 
-  h2{ margin-top:0; }
+  h2{
+    margin-top:0;
+    font-weight:600;
+    font-size:1.4rem;
+  }
 
-  a{ color:#a5f3fc; text-decoration:none; }
+  a{
+    color:#a5f3fc;
+    text-decoration:none;
+  }
 
   .resume-grid{
     display:grid;
@@ -110,7 +104,7 @@
     background: rgba(255,255,255,.16);
   }
 
-  /* 🔗 clickable project cards */
+  /* PROJECT CARDS */
   .projects{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -123,7 +117,6 @@
     background: rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.15);
     transition:.25s;
-    cursor:pointer;
   }
 
   .project-card:hover{
@@ -135,46 +128,81 @@
     margin-top:0;
   }
 
+  .buttons{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+  }
+
+  .btn{
+    flex:1;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.1);
+    text-align:center;
+    font-weight:600;
+  }
+
+  .btn:hover{
+    background:rgba(255,255,255,.2);
+  }
+
+  /* SCROLL ANIMATION */
+  .reveal{
+    opacity:0;
+    transform: translateY(30px);
+    transition: .7s ease;
+  }
+
+  .reveal.active{
+    opacity:1;
+    transform: translateY(0);
+  }
+
+  /* WHATSAPP FLOAT BUTTON */
+  .whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:14px 16px;
+    border-radius:50px;
+    color:white;
+    font-weight:700;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+  }
+
   footer{
     text-align:center;
     padding:30px 10px 50px;
     opacity:.7;
     font-size:.9rem;
   }
-
-  /* 📱 Better mobile layout */
-  @media (max-width:600px){
-    header h1{ font-size:2.2rem; }
-    header p{ font-size:1rem; }
-  }
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="reveal">
 
-  <!-- animated gradient photo frame -->
-  <div class="profile-wrap">
-    <img src="profile.png" alt="Jibraan Attar" class="profile">
-  </div>
+  <img src="profile.png" alt="Jibraan Attar" class="profile">
 
   <h1>Jibraan Attar</h1>
   <p>M.Sc Data Science — AI/ML • Data Analytics • Python Development</p>
-
 </header>
 
 <div class="container">
 
-  <div class="card">
+  <div class="card reveal">
     <h2>📬 Contact</h2>
     <p><strong>Email:</strong> jibraanattar55@gmail.com</p>
     <p><strong>Phone:</strong> +91 8262015335</p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jibraan-attara372" target="_blank">linkedin.com/in/jibraan-attara372</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/atjibraan" target="_blank">github.com/atjibraan</a></p>
+    <p><strong>LinkedIn:</strong> <a target="_blank" href="https://linkedin.com/in/jibraan-attara372">linkedin.com/in/jibraan-attara372</a></p>
+    <p><strong>GitHub:</strong> <a target="_blank" href="https://github.com/atjibraan">github.com/atjibraan</a></p>
   </div>
 
-  <div class="card">
+  <div class="card reveal">
     <h2>📄 Download My Resumes</h2>
 
     <div class="resume-grid">
@@ -184,46 +212,90 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card reveal">
     <h2>💡 About Me</h2>
     <p>
-      Passionate Data Science postgraduate with expertise in Machine Learning,
-      Deep Learning, Computer Vision, Generative AI and analytics. Focused on
-      building real-world, deployable AI solutions that create impact.
+      Passionate Data Science postgraduate with expertise in Machine Learning, Deep Learning,
+      Computer Vision, Generative AI and analytics. I love building real-world,
+      deployable AI applications and solving meaningful problems.
     </p>
   </div>
 
-  <div class="card">
+  <div class="card reveal">
     <h2>🧩 Featured Projects</h2>
 
     <div class="projects">
-      <a class="project-card" href="#" target="_blank">
+
+      <div class="project-card">
         <h3>Crack Detection — YOLOv5 + ResNet18</h3>
-        <p>Real-time defect detection with automated severity classification.</p>
-      </a>
+        <p>Real-time defect detection and crack severity classification.</p>
 
-      <a class="project-card" href="#" target="_blank">
+        <div class="buttons">
+          <a class="btn" href="https://huggingface.co/spaces/AJibraan/Crack" target="_blank">Live Demo</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
         <h3>Stable Diffusion Generator</h3>
-        <p>Text-to-image AI app with customizable prompts and parameters.</p>
-      </a>
+        <p>AI tool generating images from text prompts.</p>
 
-      <a class="project-card" href="#" target="_blank">
+        <div class="buttons">
+          <a class="btn" href="https://huggingface.co/spaces/AJibraan/Text_to_image" target="_blank">Live Demo</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
         <h3>Brain Tumor Classifier (CNN)</h3>
-        <p>Medical image classification deployed as an interactive web app.</p>
-      </a>
+        <p>Upload MRI → model predicts tumor class instantly.</p>
 
-      <a class="project-card" href="#" target="_blank">
+        <div class="buttons">
+          <a class="btn" href="https://huggingface.co/spaces/AJibraan/BRAIN-TUMOR-CLASSIFIER" target="_blank">Live Demo</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
         <h3>HR & Sales Analytics Dashboards</h3>
-        <p>Insights, KPIs and trends using Power BI and Excel.</p>
-      </a>
+        <p>Insights, KPIs & trends using Power BI + Excel.</p>
+
+        <div class="buttons">
+          <a class="btn" href="#" target="_blank">View</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
 </div>
 
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" target="_blank"
+   href="https://wa.me/918262015335?text=Hi%20Jibraan%2C%20I%20saw%20your%20portfolio%20website.%20Let%E2%80%99s%20connect!">
+  WhatsApp
+</a>
+
 <footer>
   © 2026 — Designed by Jibraan Attar • All Rights Reserved
 </footer>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll(){
+    for (let el of reveals){
+      let top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 80){
+        el.classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
 
 </body>
 </html>
