@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jibraan Attar — Portfolio</title>
+
+<style>
+  *{
+    box-sizing:border-box;
+  }
+  body{
+    margin:0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #0f766e);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color:#e5e7eb;
+  }
+
+  @keyframes gradient {
+    0%{background-position:0% 0%;}
+    50%{background-position:100% 100%;}
+    100%{background-position:0% 0%;}
+  }
+
+  header{
+    text-align:center;
+    padding:60px 20px 40px;
+  }
+
+  header h1{
+    margin:0;
+    font-size:3rem;
+    letter-spacing:1px;
+  }
+
+  header p{
+    font-size:1.1rem;
+    opacity:.85;
+  }
+
+  .container{
+    max-width:1000px;
+    margin:0 auto 60px;
+    padding:20px;
+  }
+
+  .card{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding:24px;
+    margin:18px 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+    backdrop-filter: blur(14px);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 25px 55px rgba(0,0,0,.45);
+  }
+
+  h2{
+    margin-top:0;
+    font-weight:600;
+    font-size:1.4rem;
+  }
+
+  a{
+    color:#a5f3fc;
+    text-decoration:none;
+  }
+
+  .resume-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:16px;
+  }
+
+  .resume-btn{
+    display:block;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.08);
+    text-align:center;
+    font-weight:600;
+    transition:.25s;
+  }
+
+  .resume-btn:hover{
+    background: rgba(255,255,255,.16);
+  }
+
+  ul{
+    margin:10px 0 0;
+    padding-left:18px;
+    line-height:1.6;
+  }
+
+  footer{
+    text-align:center;
+    padding:30px 10px 50px;
+    opacity:.7;
+    font-size:.9rem;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Jibraan Attar</h1>
+  <p>M.Sc Data Science — AI/ML • Data Analytics • Python Development</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>📬 Contact</h2>
+    <p><strong>Email:</strong> jibraanattar55@gmail.com</p>
+    <p><strong>Phone:</strong> +91 8262015335</p>
+    <p><strong>LinkedIn:</strong> <a target="_blank" href="https://linkedin.com/in/jibraan-attara372">linkedin.com/in/jibraan-attara372</a></p>
+    <p><strong>GitHub:</strong> <a target="_blank" href="https://github.com/atjibraan">github.com/atjibraan</a></p>
+  </div>
+
+  <div class="card">
+    <h2>📄 Download My Resumes</h2>
+
+    <div class="resume-grid">
+      <a class="resume-btn" href="Jibraan_Attar_Fresher_ml_engineer.pdf" target="_blank">🚀 AI / ML Engineer</a>
+
+      <a class="resume-btn" href="Jibraan_Attar_Fresher_Data_Analyst_Data_Scientist.pdf" target="_blank">📊 Data Analyst / Scientist</a>
+
+      <a class="resume-btn" href="Jibraan_Attar_Fresher_Python_Developer.pdf" target="_blank">🐍 Python Developer</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 About Me</h2>
+    <p>
+      Passionate Data Science postgraduate with expertise in Machine Learning, Deep Learning,
+      Computer Vision, Generative AI and analytics. I love building real-world,
+      deployable AI applications and solving meaningful problems.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Featured Projects</h2>
+
+    <ul>
+      <li><strong>Crack Detection — YOLOv5 + ResNet18</strong> (real-time classification & deployment)</li>
+      <li><strong>Stable Diffusion Prompt App</strong> — text-to-image generation</li>
+      <li><strong>Brain Tumor Classifier (CNN)</strong> — interactive medical AI app</li>
+      <li><strong>HR Analytics Dashboard</strong> — Power BI & insights</li>
+      <li><strong>Sales Analytics (Excel)</strong> — KPIs, segmentation & trends</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 — Designed by Jibraan Attar • All Rights Reserved
+</footer>
+
+</body>
+</html>
